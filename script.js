@@ -44,10 +44,10 @@ class LinkedList {
     let currentIndex = 0;
     currentNode = this.head;
     while (currentNode !== null || currentIndex > index) {
-      currentNode = currentNode.nextNode;
       if (currentIndex === index) {
         return currentNode;
       }
+      currentNode = currentNode.nextNode;
       currentIndex++;
     }
     return null;
