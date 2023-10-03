@@ -26,7 +26,7 @@ class LinkedList {
 
   size() {
     let size = 0;
-    currentNode = this.head;
+    let currentNode = this.head;
     if (this.head === null) {
       return 0;
     }
@@ -42,20 +42,20 @@ class LinkedList {
       return this.head;
     }
     let currentIndex = 0;
-    currentNode = this.head;
+    let currentNode = this.head;
     while (currentNode !== null || currentIndex > index) {
       if (currentIndex === index) {
         return currentNode;
       }
       currentNode = currentNode.nextNode;
-      currentIndex++;
+      currentIndex += 1;
     }
     return null;
   }
 
   pop() {
-    currentNode = this.head;
-    nextNode = this.head.nextNode;
+    let currentNode = this.head;
+    let nextNode = this.head.nextNode;
     while (nextNode !== null) {
       currentNode = nextNode;
       nextNode = nextNode.nextNode;
@@ -65,12 +65,25 @@ class LinkedList {
   }
 
   contains(value) {
-    currentNode = this.head;
+    let currentNode = this.head;
     while (currentNode !== null) {
       if (currentNode.value === value) {
         return true;
       }
       currentNode = currentNode.nextNode;
+    }
+    return false;
+  }
+
+  find(value) {
+    let currentIndex = 0;
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return currentIndex;
+      }
+      currentNode = currentNode.nextNode;
+      currentIndex += 1;
     }
     return false;
   }
