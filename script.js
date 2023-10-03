@@ -4,9 +4,20 @@ class LinkedList {
     this.tail = null;
   }
 
+  append(value) {
+    const newNode = new Node(value, null);
+    if (tail === null) {
+      tail = newNode;
+      head = newNode;
+    } else {
+      tail.nextNode = newNode;
+      tail = newNode;
+    }
+  }
+
   prepend(value) {
     const nextNode = null;
-    if ((head = null)) {
+    if (head === null) {
       tail = nextNode;
     } else {
       nextNode = head.nextNode;
