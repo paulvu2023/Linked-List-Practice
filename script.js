@@ -59,9 +59,11 @@ class LinkedList {
     while (nextNode !== null) {
       currentNode = nextNode;
       nextNode = nextNode.nextNode;
+      if (nextNode === null) {
+        currentNode.nextNode = null;
+        this.tail = currentNode;
+      }
     }
-    currentNode.nextNode = null;
-    this.tail = currentNode;
   }
 
   contains(value) {
