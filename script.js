@@ -25,6 +25,19 @@ class LinkedList {
     const newNode = new Node(value, nextNode);
     head = newNode;
   }
+
+  size() {
+    let size = 0;
+    currentNode = head;
+    if (head === null) {
+      return 0;
+    }
+    while (currentNode !== null) {
+      currentNode = currentNode.nextNode;
+      size++;
+    }
+    return size;
+  }
 }
 
 class Node {
