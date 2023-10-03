@@ -16,7 +16,7 @@ class LinkedList {
   }
 
   prepend(value) {
-    const nextNode = null;
+    let nextNode = null;
     if (this.head !== null) {
       nextNode = this.head;
     }
@@ -106,3 +106,6 @@ class Node {
     this.nextNode = nextNode;
   }
 }
+
+const list = new LinkedList();
+list.toString();
