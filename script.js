@@ -6,30 +6,30 @@ class LinkedList {
 
   append(value) {
     const newNode = new Node(value, null);
-    if (tail === null) {
-      tail = newNode;
-      head = newNode;
+    if (this.tail === null) {
+      this.tail = newNode;
+      this.head = newNode;
     } else {
-      tail.nextNode = newNode;
-      tail = newNode;
+      this.tail.nextNode = newNode;
+      this.tail = newNode;
     }
   }
 
   prepend(value) {
     const nextNode = null;
-    if (head === null) {
-      tail = nextNode;
+    if (this.head === null) {
+      this.tail = nextNode;
     } else {
-      nextNode = head.nextNode;
+      nextNode = this.head.nextNode;
     }
     const newNode = new Node(value, nextNode);
-    head = newNode;
+    this.head = newNode;
   }
 
   size() {
     let size = 0;
-    currentNode = head;
-    if (head === null) {
+    currentNode = this.head;
+    if (this.head === null) {
       return 0;
     }
     while (currentNode !== null) {
@@ -37,6 +37,33 @@ class LinkedList {
       size++;
     }
     return size;
+  }
+
+  at(index) {
+    if (index === 0) {
+      return this.head;
+    }
+    let currentIndex = 0;
+    currentNode = this.head;
+    while (currentNode !== null || currentIndex > index) {
+      currentNode = currentNode.nextNode;
+      if (currentIndex === index) {
+        return currentNode;
+      }
+      currentIndex++;
+    }
+    return null;
+  }
+
+  pop() {
+    currentNode = this.head;
+    nextNode = this.head.nextNode;
+    while (nextNode !== null) {
+      currentNode = nextNode;
+      nextNode = nextNode.nextNode;
+    }
+    currentNode.nextNode = null;
+    tail = currentNode;
   }
 }
 
