@@ -61,7 +61,7 @@ class LinkedList {
       nextNode = nextNode.nextNode;
     }
     currentNode.nextNode = null;
-    tail = currentNode;
+    this.tail = currentNode;
   }
 
   contains(value) {
@@ -106,6 +106,3 @@ class Node {
     this.nextNode = nextNode;
   }
 }
-
-const list = new LinkedList();
-list.toString();
