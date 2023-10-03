@@ -65,6 +65,17 @@ class LinkedList {
     currentNode.nextNode = null;
     tail = currentNode;
   }
+
+  contains(value) {
+    currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return true;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return false;
+  }
 }
 
 class Node {
