@@ -17,10 +17,8 @@ class LinkedList {
 
   prepend(value) {
     const nextNode = null;
-    if (this.head === null) {
-      this.tail = nextNode;
-    } else {
-      nextNode = this.head.nextNode;
+    if (this.head !== null) {
+      nextNode = this.head;
     }
     const newNode = new Node(value, nextNode);
     this.head = newNode;
